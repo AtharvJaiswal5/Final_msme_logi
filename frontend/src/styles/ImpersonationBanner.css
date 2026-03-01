@@ -1,0 +1,78 @@
+.impersonation-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #FF9F1C 0%, #FFB84D 100%);
+  color: white;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.impersonation-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.impersonation-icon {
+  font-size: 20px;
+}
+
+.impersonation-text {
+  font-weight: 500;
+}
+
+.impersonation-text strong {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.impersonation-admin {
+  opacity: 0.9;
+  font-size: 13px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.exit-impersonation-btn {
+  background: white;
+  color: #FF9F1C;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.exit-impersonation-btn:hover {
+  background: #FFF3E6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.exit-impersonation-btn:active {
+  transform: translateY(0);
+}
+
+/* Adjust main content when banner is visible */
+body:has(.impersonation-banner) .dashboard-container {
+  padding-top: 60px;
+}

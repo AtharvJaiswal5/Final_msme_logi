@@ -1,0 +1,213 @@
+/* Live Map Styles */
+.live-map-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 2px solid var(--glass-border);
+}
+
+.leaflet-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Map Info Overlay */
+.map-info-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.map-info-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  gap: 20px;
+  box-shadow: var(--shadow-xl);
+  animation: slideIn 0.5s ease-out;
+}
+
+.map-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.map-info-icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.map-info-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.map-info-value {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Map Popup Styling */
+.map-popup {
+  text-align: center;
+  padding: 8px;
+}
+
+.map-popup strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+.map-popup p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Leaflet Override Styles */
+.leaflet-container {
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.leaflet-popup-tip {
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  border-top: none;
+  border-right: none;
+}
+
+.leaflet-popup-close-button {
+  color: var(--text-primary) !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  padding: 4px 8px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: var(--primary) !important;
+}
+
+/* Zoom Control Styling */
+.leaflet-control-zoom {
+  border: 2px solid var(--glass-border) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px);
+  color: var(--text-primary) !important;
+  border: none !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--primary) !important;
+  color: white !important;
+}
+
+/* Attribution */
+.leaflet-control-attribution {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-muted) !important;
+  font-size: 0.75rem !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--primary) !important;
+}
+
+/* Pulsing Animation for Driver Marker */
+@keyframes pulse-marker {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.leaflet-marker-icon {
+  animation: pulse-marker 2s ease-in-out infinite;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .live-map-container {
+    height: 400px;
+  }
+
+  .map-info-overlay {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .map-info-card {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .map-info-value {
+    font-size: 1.1rem;
+  }
+}
+
+/* Loading State */
+.map-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background: var(--glass-bg);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--glass-border);
+}
+
+.map-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--glass-border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

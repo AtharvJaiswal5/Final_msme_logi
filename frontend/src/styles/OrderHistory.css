@@ -1,0 +1,249 @@
+/* Order History Styles */
+
+.order-history-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(255, 159, 28, 0.1), rgba(255, 159, 28, 0.05));
+  border: 2px solid rgba(255, 159, 28, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 159, 28, 0.2);
+  border-color: var(--orange);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 2px 8px rgba(255, 159, 28, 0.3));
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Filters */
+.filters-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-input,
+.filter-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(255, 159, 28, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 243, 230, 0.5);
+  color: var(--dark-brown);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255, 159, 28, 0.1);
+  background: var(--cream);
+}
+
+.filter-select {
+  cursor: pointer;
+}
+
+.sort-toggle-btn {
+  padding: 12px 20px;
+  border: 2px solid rgba(255, 159, 28, 0.3);
+  border-radius: 10px;
+  background: var(--orange);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 50px;
+}
+
+.sort-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 159, 28, 0.3);
+}
+
+/* Results Info */
+.results-info {
+  padding: 10px 15px;
+  background: rgba(255, 159, 28, 0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Orders List */
+.orders-list {
+  display: grid;
+  gap: 15px;
+}
+
+.history-order-card {
+  background: var(--cream);
+  border: 2px solid rgba(255, 159, 28, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.history-order-card:hover {
+  transform: translateX(5px);
+  border-color: var(--orange);
+  box-shadow: 0 5px 20px rgba(255, 159, 28, 0.2);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 159, 28, 0.2);
+}
+
+.order-id {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.order-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.order-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+  font-family: 'Courier New', monospace;
+}
+
+.order-status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.order-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.order-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.detail-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  color: var(--dark-brown);
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters-container {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
