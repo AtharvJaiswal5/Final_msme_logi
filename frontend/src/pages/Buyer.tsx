@@ -14,7 +14,7 @@ import { useToast } from "../hooks/useToast";
 import Toast from "../components/Toast";
 
 export default function Buyer() {
-  const { toasts, removeToast, success, error, warning } = useToast();
+  const { toasts, removeToast } = useToast();
   const [products, setProducts] = useState<any[]>([]);
   const [cart, setCart] = useState<any[]>([]);
   const [orders, setOrders] = useState<any[]>([]);
